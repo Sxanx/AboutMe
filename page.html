@@ -4,8 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Works</title>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 20px;
+            overflow-x: hidden;
+        }
+        .menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #ffffff;
+            z-index: 20;
+            transition: transform 0.3s;
+        }
+        .menu:hover {
+            transform: scale(1.1);
+        }
+        .menu-box {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: rgba(26, 26, 26, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+            display: none;
+            flex-direction: column;
+            z-index: 30;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .menu-box a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            transition: 0.3s;
+        }
+        .menu-box a:hover {
+            color: #00bcd4;
+        }
+        .works-container {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .work-item {
+            position: relative;
+            background: linear-gradient(145deg, #1e1e1e, #292929);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .work-item:hover, .work-item:active {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+        .work-item img {
+            width: 100%;
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.3s ease-in-out;
+        }
+        .work-item:hover img, .work-item:active img {
+            transform: scale(1.05);
+        }
+        .work-item h3 {
+            color: #00bcd4;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .work-description {
+            opacity: 0;
+            margin-top: 10px;
+            background: rgba(0, 188, 212, 0.9);
+            color: #ffffff;
+            padding: 8px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            font-size: 12px;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .work-item:hover .work-description, .work-item:active .work-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 10px;
+            }
+            .works-container {
+                grid-template-columns: 1fr;
+            }
+            .work-item {
+                padding: 10px;
+            }
+            .work-item h3 {
+                font-size: 14px;
+            }
+            .work-description {
+                font-size: 11px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="menu" onclick="toggleMenu()">☰</div>
@@ -18,9 +147,39 @@
         <div class="work-item">
             <img src="photo/1.jpg" alt="เหรียญทอง">
             <h3>การแข่งขันศิลปหัตถกรรม</h3>
-            <div class="work-description">ได้รับเหรียญทองจากการแข่งขันศิลปหัตถกรรม ในประเภท web-application</div>
+            <div class="work-description">ได้รับเหรียญทองจากการแข่งขันศิลปหัตถกรรม ในประเภทweb-application</div>
+        </div>
+        <div class="work-item">
+            <img src="photo/2.png" alt="โปรเจค 1">
+            <h3>การเข้ามร่วมการอบรม</h3>
+            <div class="work-description">เข้าร่วมการอบรมหุ่นยนต์RAI</div>
+        </div>
+        <div class="work-item">
+            <img src="photo/3.jpg" alt="เกียรติบัตร">
+            <h3>การเข้าร่วมค่ายคอมพิวเตอร์</h3>
+            <div class="work-description">เข้าร่วมค่ายคอมพิวเตอร์3วัน2คืน</div>
+        </div>
+        <div class="work-item">
+            <img src="photo/4.png" alt="เกียรติบัตร">
+            <h3>โปรเจคพัฒนาเว็บไซต์</h3>
+            <div class="work-description">เว็บไซต์การลงเวลามาเรียน</div>
+        </div>
+        <div class="work-item">
+            <img src="photo/5.jpg" alt="เกียรติบัตร">
+            <h3>Micro Controller</h3>
+            <div class="work-description">ARUDIO Ultrasonic ตรวจจับสิ่งของโดยแสดงผลผ่านหน้าจอคอมพิวเตอร์</div>
+        </div>
+        <div class="work-item">
+            <img src="photo/6.png" alt="เกียรติบัตร">
+            <h3>ทำเกมผ่านconstruct2</h3>
+            <div class="work-description">เกมผีแนวสยองขวัญ</div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menuBox');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
