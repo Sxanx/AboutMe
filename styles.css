@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+}
+
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+.menu-box {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    display: none;
+    flex-direction: column;
+}
+
+.menu-box a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.menu-box a:hover {
+    color: #00bcd4;
+}
+
+.profile-container {
+    background: linear-gradient(135deg, #1a1a1a, #292929);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #00bcd4;
+    object-fit: cover;
+}
+
+.skills {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    background: #222;
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: #00bcd4;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    user-select: none;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.social-links a:hover {
+    background: #00bcd4;
+    color: #0d0d0d;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
+}
