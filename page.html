@@ -71,6 +71,10 @@
             box-sizing: border-box;
         }
         .work-item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background: linear-gradient(145deg, #1e1e1e, #292929);
             border-radius: 12px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.05);
@@ -104,15 +108,16 @@
             margin: 10px 0 5px;
         }
         .work-description {
-            margin-top: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: rgba(0, 188, 212, 0.9);
-            color: #ffffff;
-            padding: 6px;
-            font-size: 0.9em;
+            padding: 10px;
+            color: white;
             border-radius: 8px;
             opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
         }
 
         .work-item:hover .work-description {
